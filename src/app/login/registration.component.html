@@ -1,0 +1,121 @@
+<div id="Register" class="tabcontent">
+    <form [formGroup]="registrationGroup">
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-md-12 form-group">
+                    <label for="fName" for="">Full Name</label>
+                    <input type="text" formControlName="fName" name="fname" tabindex="1"  placeholder="Enter Full Name Here.." class="form-control" >
+                    <div class="form-control-feedback" *ngIf="registrationGroup.get('fName').errors && (registrationGroup.get('fName').dirty || registrationGroup.get('fName').touched)">
+                        <p *ngIf="registrationGroup.get('fName').errors.required">Full name is required.</p>
+                    </div>
+                </div>
+            </div>	
+        </div>
+
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-md-6 form-group">
+                    <label for="Dob">Date Of Birth</label>
+                    <input type="date" formControlName="dob" name="DOB" id="Dob" tabindex="6" class="form-control" placeholder="DOB" value="" >
+                    <div class="form-control-feedback" *ngIf="registrationGroup.get('dob').errors && registrationGroup.get('dob').errors.phone && (registrationGroup.get('dob').dirty || registrationGroup.get('dob').touched)">
+                        <p *ngIf="registrationGroup.get('dob').errors.required">Date of birth is required.</p>
+                    </div>
+                    
+                </div>
+
+                <div class="col-md-6 form-group">
+                    <label for="Mobile_No">Mobile No</label>
+                    <input type="text" formControlName="mob_no" name="Mobile_No" id="Mobile_No" tabindex="7" class="form-control" placeholder="Mobile No" value="" >
+                    <div class="form-control-feedback" *ngIf="registrationGroup.get('mob_no').errors && (registrationGroup.get('mob_no').dirty || registrationGroup.get('mob_no').touched)">
+                        <p *ngIf="registrationGroup.get('mob_no').errors.required">Mobile no is required.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-md-6 form-group">
+                    <label for="Branch">Branch</label>
+                    <select id="Branch" formControlName="branch" name="Branch"  tabindex="8" class="form-control" >
+                        <option value="">--select branch--</option>
+                        <option value="6">Information Technology</option>
+                        <option value="3">Computer Engineering</option>
+                        <option value="1">Chemical Engineering</option>
+                        <option value="8">Petrochemical Engineering</option>
+                        <option value="4">Electrical Engineering</option>
+                        <option value="5">Electronics and Telecommunication Engineering</option>
+                        <option value="7">Mechanical Engineering</option>
+                        <option value="2">Civil Engineering</option>
+                        </select>
+                    
+                    <div class="form-control-feedback" *ngIf="registrationGroup.get('branch').errors && (registrationGroup.get('branch').dirty || registrationGroup.get('branch').touched)">
+                        <p *ngIf="registrationGroup.get('branch').errors.required">Please select your branch.</p>
+                    </div>
+
+<!--                        <input type="email" name="email" id="email" tabindex="1" class="form-control" placeholder="Email Address" value="">-->
+                </div>
+                <div class="col-md-6 form-group">
+                    <label for="year">Year</label>
+                    <select id="year" formControlName="year" name="year"  tabindex="9" class="form-control" >
+                        <option value="">--select year--</option>
+                        <option value=First>First</option>
+                        <option value=Second>Second</option>
+                        <option value=Third>Third</option>
+                        <option value=Fourth>Fourth</option>
+
+                    </select>
+                    
+                    <div class="form-control-feedback" *ngIf="registrationGroup.get('year').errors && (registrationGroup.get('year').dirty || registrationGroup.get('year').touched)">
+                        <p *ngIf="registrationGroup.get('year').errors.required">Select your respective Year.</p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-md-6 form-group">
+                    <label for="mail">Email</label>
+                    <input type="email" id="mail" formControlName="mail" name="mail" tabindex="10"  placeholder="Enter email Here.." class="form-control">
+                    <!-- <span style="color:red;font-size:18px;" *ngIf="form.mail.$dirty && form.mail.$invalid">
+                    <span *ngIf="form.mail.$error.required" style="color:red;font-size:18px;">Email is required.</span>
+                    <span *ngIf="form.mail.$error.email" style="color:red;font-size:18px;">Invalid email address.</span>
+                    </span> -->
+                </div>
+                <div class="col-md-6 form-group">
+                    <label for="userId">user Id</label>
+                    <input type="number" formControlName="userId" name="userId" tabindex="11"
+                           placeholder="Enter userId Here.." class="form-control" >
+                    <!-- <span style="color:red;font-size:18px;" *ngIf="form.userId.$touched && form.userId.$error.required">
+                        userid is required and it should be your roll no.</span> -->
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-md-6 form-group">
+                    <label for="">password</label>
+                    <input type="password" formControlName="password" name="password"
+                           id="password" tabindex="12" class="form-control" placeholder="Password">
+                    <!-- <span *ngIf="form.password.$touched && form.password.$error.pattern" style="color:red;font-size:18px;">
+                        password should be between 4 to 15 charecter alpha numeric with at least one uppercase letter.</span> -->
+                </div>
+
+                <div class="col-md-6 form-group">
+                    <label for="confirm-password">Confirm password</label>
+                    <input type="password" (keyup)="checker()" formControlName="confirm_password" name="confirm_password" id="confirm-password" tabindex="12" class="form-control" placeholder="Confirm Password" >
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <input type="submit" [attr.disabled]="registrationGroup.invalid" (click)="register_submit()" name="register-submit" id="register-submit" tabindex="13" class="btn btn-register bg-primary" value="Register Now">
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+

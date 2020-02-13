@@ -1,0 +1,49 @@
+/* You can add global styles to this file, and also import other style files */
+.navbar-wrap{
+    font-size: 25px;
+    background-color: #009688;
+    
+}
+
+.logo-wrapper{
+    border-radius: 50%;
+}
+
+.navbar-wrap a{
+    color: #ff6600;
+    font-family: Balaram;
+    display: block;
+}
+
+.navbar-wrap a:hover {
+    background-color: #009688;
+    color: white;
+  }
+
+.page-heading{
+    text-align:left;
+    font-weight:bold;
+    color:#cc6600;
+}
+
+.heading-image{
+    width:70px;
+    height:80px;
+}
+
+.body-container{
+    background-color:#ffeecc;
+}
+.tab{
+    padding: 15px 0;
+    text-align:center;
+    background-color: #009688;
+    color: #ff6600;
+    width: 50%;
+}
+.tab:hover {
+    background-color: #ff6600;
+    color: #009688;
+}
+
+/*#26519e*/
