@@ -2,7 +2,6 @@
 .navbar-wrap{
     font-size: 25px;
     background-color: #009688;
-    
 }
 
 .logo-wrapper{
@@ -32,7 +31,11 @@
 }
 
 .body-container{
-    background-color:#ffeecc;
+    background-color: #D3D3D3;
+}
+.log-reg-wrapper{
+    background-color: #4C4C4E;
+    color: white;
 }
 .tab{
     padding: 15px 0;
@@ -44,6 +47,15 @@
 .tab:hover {
     background-color: #ff6600;
     color: #009688;
+}
+.footer-wrap{
+    font-size: 25px;
+    background-color: #009688;
+    position: fixed;
+    bottom: 0;
+    text-align: center;
+    width: 100%;
+    margin: 0 auto;
 }
 
 /*#26519e*/
